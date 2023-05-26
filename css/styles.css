@@ -34,6 +34,7 @@ p {
   border-radius: var(--border-radius);
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .image__container {
@@ -97,6 +98,10 @@ p {
   flex-direction: column;
 }
 
+.media__share-container--desktop {
+  display: none;
+}
+
 .media__share-container,
 .social__share-container {
   height: 1.875rem;
@@ -112,7 +117,8 @@ p {
   background-color: var(--color-text);
 }
 
-.media__share-container:hover {
+.media__share-container:hover,
+.media__share-container--desktop:hover {
   background-color: var(--color-text);
 }
 
@@ -135,7 +141,7 @@ p {
   letter-spacing: 0.12px;
 }
 
-.social__container {
+.social__container-mobile {
   height: 4rem;
   width: 20.4375rem;
   border-bottom-left-radius: var(--border-radius);
@@ -164,6 +170,14 @@ p {
   justify-content: space-between;
   align-items: center;
   margin-right: 3.5rem;
+}
+
+.social__bubble {
+  display: none;
+}
+
+.social__arrow {
+  display: none;
 }
 
 @media only screen and (min-width: 1000px) {
@@ -201,5 +215,63 @@ p {
 
   .content__text {
     margin-bottom: 1.25rem;
+  }
+
+  .social__container-mobile {
+    display: none;
+  }
+
+  .media__share-container {
+    display: none;
+  }
+
+  .media__share-container--desktop {
+    height: 1.875rem;
+    width: 1.875rem;
+    border-radius: 100%;
+    background-color: var(--color-background-main);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+  }
+
+  .media__button__share--white-desktop {
+    display: none;
+  }
+
+  .social__image__container {
+    width: 5.75rem;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+  }
+
+  .social__bubble-container {
+    width: 15.5rem;
+    position: absolute;
+    top: 25%;
+    right: -9.5%;
+    top: 45%;
+    display: none;
+  }
+
+  .social__bubble {
+    width: 15.5rem;
+    height: 3.4375rem;
+    background-color: var(--color-heading);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    padding: 1.125rem 2.25rem;
+  }
+
+  .social__arrow {
+    border-color: var(--color-heading) transparent;
+    border-style: solid;
+    border-width: 12px 12px 0 12px;
+    width: 10px;
+    position: relative;
+    left: 45%;
+    display: block;
   }
 }
